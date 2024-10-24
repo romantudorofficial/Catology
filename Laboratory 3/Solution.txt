@@ -1,0 +1,11 @@
+
+	- Laboratory 3 - Solution:
+	
+		- Point 4:
+			
+			- Ideas of improving the dataset:
+			
+				- we can delete from the training dataset the rows where we have unknown values,
+				  for example where the race is unknown, as these values represent noise in the
+				  dataset
+				- ... to add more...
