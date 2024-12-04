@@ -6,8 +6,10 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# 1. Citirea datelor
-file_path =r"C:\Users\iftim\Documents\GitHub\Catology\Project\data.csv"
+
+
+# Get the data.
+file_path = 'Project\Data\modified_data_for_training_and_testing.csv'
 
 # Verificăm dacă fișierul există
 import os
