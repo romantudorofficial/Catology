@@ -26,7 +26,6 @@ df['Gender_numeric'] = le_gender.fit_transform(df['Gender'])
 le_breed = LabelEncoder()
 df['Breed_numeric'] = le_breed.fit_transform(df['Breed'])
 
-# Encode 'Age', 'Housing', and 'Zone' columns
 le_age = LabelEncoder()
 df['Age_numeric'] = le_age.fit_transform(df['Age'])
 
