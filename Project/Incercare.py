@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import LabelEncoder
 
 # Load the dataset and consider 'Nr' and 'NSP' as missing values
-file_path = 'data.csv'
+file_path = r"D:\1. University\2. Courses\1. Current Courses\01. Artificial Intelligence\3. GitHub Project\Project\data.csv"
 df = pd.read_csv(file_path, delimiter=';', na_values=['Nr', 'NSP'])
 
 # Step 1: Check for any missing values and identify duplicate rows
