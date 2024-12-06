@@ -6,14 +6,10 @@ from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import LabelEncoder
 from sklearn.utils.class_weight import compute_class_weight
 
-<<<<<<< Updated upstream:Project/Training.py
 
 
 # Get the data.
 
-def load_data_from_csv (file_path):
-
-=======
 def calculate_accuracy(y_true, y_pred):
     y_true = y_true.flatten()
     y_pred = y_pred.flatten()
@@ -24,7 +20,6 @@ def calculate_accuracy(y_true, y_pred):
     return accuracy
 
 def load_data_from_csv(file_path):
->>>>>>> Stashed changes:Project/training.py
     df = pd.read_csv(file_path)
 
     df.columns = df.columns.str.strip()
@@ -56,22 +51,19 @@ def load_data_from_csv(file_path):
 
 
 
-file_path = 'Project\Data\modified_data_for_training.csv'
+file_path = '/Users/bili/Documents/GitHub/Catology/Project/Data/modified_data_for_training.csv'
 X_train, X_test, y_train, y_test = load_data_from_csv(file_path)
-
 
 
 class_weights = compute_class_weight('balanced', classes=np.unique(y_train), y=y_train.flatten())
 class_weights = dict(enumerate(class_weights))
 
 
-
 input_size = X_train.shape[1]
 hidden_size = 10
 output_size = len(np.unique(y_train))
-learning_rate = 0.001
+learning_rate = 0.0001
 epochs = 5000
-
 
 
 np.random.seed(42)
@@ -83,21 +75,17 @@ bias_output = np.zeros((1, output_size))
 
 
 def sigmoid (x):
-
     return 1 / (1 + np.exp(-x))
 
 
 
 def sigmoid_derivative (x):
-
     return x * (1 - x)
 
 
 
 def softmax (x):
-
     exp_x = np.exp(x - np.max(x, axis=1, keepdims=True))
-
     return exp_x / np.sum(exp_x, axis=1, keepdims=True)
 
 
@@ -158,13 +146,7 @@ y_pred_test = forward_propagation(X_test)
 y_pred_test = np.argmax(y_pred_test, axis=1)
 y_test = y_test.flatten()
 
-<<<<<<< Updated upstream:Project/Training.py
-
-
-accuracy = accuracy_score(y_test, y_pred_test)
-=======
 accuracy = calculate_accuracy(y_test, y_pred_test)
->>>>>>> Stashed changes:Project/training.py
 conf_matrix = confusion_matrix(y_test, y_pred_test)
 
 
