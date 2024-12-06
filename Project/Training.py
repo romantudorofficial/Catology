@@ -2,16 +2,29 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import LabelEncoder
 from sklearn.utils.class_weight import compute_class_weight
 
+<<<<<<< Updated upstream:Project/Training.py
 
 
 # Get the data.
 
 def load_data_from_csv (file_path):
 
+=======
+def calculate_accuracy(y_true, y_pred):
+    y_true = y_true.flatten()
+    y_pred = y_pred.flatten()
+    
+    correct_predictions = np.sum(y_true == y_pred)
+    
+    accuracy = correct_predictions / len(y_true)
+    return accuracy
+
+def load_data_from_csv(file_path):
+>>>>>>> Stashed changes:Project/training.py
     df = pd.read_csv(file_path)
 
     df.columns = df.columns.str.strip()
@@ -145,9 +158,13 @@ y_pred_test = forward_propagation(X_test)
 y_pred_test = np.argmax(y_pred_test, axis=1)
 y_test = y_test.flatten()
 
+<<<<<<< Updated upstream:Project/Training.py
 
 
 accuracy = accuracy_score(y_test, y_pred_test)
+=======
+accuracy = calculate_accuracy(y_test, y_pred_test)
+>>>>>>> Stashed changes:Project/training.py
 conf_matrix = confusion_matrix(y_test, y_pred_test)
 
 
